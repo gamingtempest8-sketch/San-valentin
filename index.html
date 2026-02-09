@@ -1,52 +1,10 @@
- <div class="screen hiden" id="main">
-  <div class="card">
-    <h2>Hey Scarlett 💌</h2>
-    <p class="sub">William tiene una pregunta...</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>San Valentín 💌</title>
 
-    <div class="question">
-      ¿Quieres ser mi San Valentín? No acepto no por respuesta...
-    </div>
-
-    <div class="buttons">
-      <button id="yes">Sí 💘</button>
-      <button id="no">No</button>
-    </div>
-
-<p id="smallText">¡Acepta!, no te arrepentiras..<br>
-   
-    <p class="link" id="reasonsLink"></p>
-    </div>
-  </div>
-
-<div class="screen hidden" id="final">
-  <div class="card">
-    <h1>¡Sabia que dirias que siii! 💞</h1>
-    <p>¡Porfiiin! ¡Solo me ha costado 6 meses!</p>
-
-    <img 
-      src=https://i.pinimg.com/236x/00/29/48/0029485f81cbf60301f81daaf7a49e01.jpg
-      class="Ositos"
-    </div>
-  
-    <div class="screen hidden" id="Main">
-  <div class="card">
-    <h2>Razones para decir que sí 💖</hh2>
-    <p>1. Contigo todo es más bonito.</p>
-    <p>2. Nuestras fotos son preciosas.</p>
-    <p>3. Prometo darte muchos abrazos.</p>
-
-    <button id="backBtn">Volver</button>
-  </div>
-</div>
-<audio id="music" controls autoplay loop>
-  <source src=https://files.catbox.moe/ntsuxn.mp3>
-</audio>
-    <h2>Toca el corazón 💖</h2>
-
-<div id="heart">❤️</div>
-
-<div id="rain-container"></div>
-
+<style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -72,7 +30,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
-h2 {
+h2, h1 {
   margin: 0;
 }
 
@@ -127,56 +85,6 @@ button {
   height: auto;
 }
 
-.heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall linear forwards;
-  pointer-events: none;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-}
-.reasonslink {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #444;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#back {
-  margin-top: 15px;
-  background: #ddd;
-}
-
-.rea {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hidden {
-  display: none;
-}
-
-.link {
-  margin-top: 10px;
-  color: #444;
-  cursor: pointer;
-  text-decoration: underline;
-}
-.cards {
-  background: #fff0f4;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-}
-
 #final{
   height:100vh;
   background:radial-gradient(circle,#ff5fa2,#1f004b);
@@ -204,149 +112,139 @@ button {
   padding:10px 18px;
   border-radius:25px;
   font-size:15px;
-  color:Black;
-
+  color:black;
   background:rgba(255,255,255,0.25);
   backdrop-filter:blur(6px);
-
   opacity:0;
   white-space:nowrap;
-
   animation:floatLove 5s ease-out forwards;
 }
 
-/* animación flotante romántica */
 @keyframes floatLove{
-
-  0%{
-    opacity:0;
-    transform:scale(0.6) translate(0,0);
-  }
-
-  15%{
-    opacity:1;
-    transform:scale(1);
-  }
-
-  60%{
-    opacity:1;
-  }
-
-  100%{
-    transform:
-      translate(var(--x),var(--y))
-      rotate(var(--r));
-    opacity:0;
-  }
+  0%{opacity:0; transform:scale(0.6) translate(0,0);}
+  15%{opacity:1; transform:scale(1);}
+  60%{opacity:1;}
+  100%{transform:translate(var(--x),var(--y)) rotate(var(--r)); opacity:0;}
 }
+</style>
+</head>
 
+<body>
+
+<!-- PANTALLA PRINCIPAL -->
+<div class="screen" id="main">
+  <div class="card">
+    <h2>Hey Scarlett 💌</h2>
+    <p class="sub">William tiene una pregunta...</p>
+    <div class="question">
+      ¿Quieres ser mi San Valentín? No acepto no por respuesta...
+    </div>
+    <div class="buttons">
+      <button id="yes">Sí 💘</button>
+      <button id="no">No</button>
+    </div>
+    <p id="smallText">¡Acepta!, no te arrepentirás..</p>
+  </div>
+</div>
+
+<!-- PANTALLA FINAL -->
+<div class="screen hidden" id="final">
+  <div class="card">
+    <h1>¡Sabía que dirías que sí! 💞</h1>
+    <p>¡Porfín! ¡Solo me ha costado 6 meses!</p>
+    <img src="https://i.pinimg.com/236x/00/29/48/0029485f81cbf60301f81daaf7a49e01.jpg" class="Ositos">
+    <h2>Toca el corazón 💖</h2>
+    <div id="heart">❤️</div>
+    <div id="rain-container"></div>
+  </div>
+</div>
+
+<!-- PANTALLA RAZONES -->
+<div class="screen hidden" id="reasons">
+  <div class="card">
+    <h2>Razones para decir que sí 💖</h2>
+    <p>1. Contigo todo es más bonito.</p>
+    <p>2. Nuestras fotos son preciosas.</p>
+    <p>3. Prometo darte muchos abrazos.</p>
+    <button id="backBtn">Volver</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+  <source src="https://files.catbox.moe/ntsuxn.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// BOTONES
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
 const mainScreen = document.getElementById("main");
 const finalScreen = document.getElementById("final");
-const reasonsLink = document.getElementById("reasonsLink");
-const reasonsScreen = document.getElementById("reasons");
-const backBtn = document.getElementById("backBtn");
+const heart = document.getElementById("heart");
 
+// NO BOTÓN
 let scale = 1;
-
 noBtn.addEventListener("click", () => {
   scale += 0.25;
-  yesBtn.style.transform = `scale(${scale})`;
+  yesBtn.style.transform = scale(${scale});
 });
 
+// SÍ BOTÓN
 yesBtn.addEventListener("click", () => {
   mainScreen.classList.add("hidden");
   finalScreen.classList.remove("hidden");
-
+  document.getElementById("music").play();
   setInterval(createHeart, 200);
 });
 
+// CORAZONES FLOTANTES
 function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerText = "💖";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
-  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 4000);
+  const heartDiv = document.createElement("div");
+  heartDiv.classList.add("heart");
+  heartDiv.innerText = "💖";
+  heartDiv.style.left = Math.random() * 100 + "vw";
+  heartDiv.style.animationDuration = (Math.random()*2+2) + "s";
+  heartDiv.style.fontSize = (Math.random()*20+20) + "px";
+  document.body.appendChild(heartDiv);
+  setTimeout(()=>heartDiv.remove(),4000);
 }
 
-const heart = document.getElementById("heart");
-
+// FRASES
 const phrases = [
-
-"Tu sonrisa ilumina mi vida ✨",
-"Eres mi lugar favorito 💕",
-"Tu cabello castaño me encanta 🤎",
-"Tus ojos son hermosos 😍",
-"Me haces muy feliz 💘",
-"Eres mi paz 🥺",
-"Contigo todo es bonito 💖",
-"Tu risa es perfecta 🎶",
-"Eres mi persona favorita 💓",
-"Tu forma de ser enamora 💗",
-
-"Tu mirada me derrite 🫠",
-"Eres mi alegría diaria 🌷",
-"Me encanta hablar contigo 💬",
-"Eres demasiado especial 💎",
-"Tu voz me tranquiliza 🎧",
-"Me haces sonreír siempre 😊",
-"Eres mi inspiración 🌟",
-"Tu dulzura es única 🍯",
-"Me encanta tu forma de ser 💞",
-"Contigo el tiempo vuela ⏳",
-
-"Eres mi suerte 🍀",
-"Mi día mejora contigo ☀️",
-"Tu personalidad es hermosa 🌸",
-"Me encantas tal como eres 💝",
-"Eres mi persona especial 💓",
-"Tu carita es preciosa 😘",
-"Siempre pienso en ti 💭",
-"Tu energía es única ⚡",
-"Me haces sentir feliz 🥰",
-"Contigo todo es mejor 💗"
+"Tu sonrisa ilumina mi vida ✨","Eres mi lugar favorito 💕","Tu cabello castaño me encanta 🤎",
+"Tus ojos son hermosos 😍","Me haces muy feliz 💘","Eres mi paz 🥺","Contigo todo es bonito 💖",
+"Tu risa es perfecta 🎶","Eres mi persona favorita 💓","Tu forma de ser enamora 💗",
+"Tu mirada me derrite 🫠","Eres mi alegría diaria 🌷","Me encanta hablar contigo 💬",
+"Eres demasiado especial 💎","Tu voz me tranquiliza 🎧","Me haces sonreír siempre 😊",
+"Eres mi inspiración 🌟","Tu dulzura es única 🍯","Me encanta tu forma de ser 💞",
+"Contigo el tiempo vuela ⏳","Eres mi suerte 🍀","Mi día mejora contigo ☀️",
+"Tu personalidad es hermosa 🌸","Me encantas tal como eres 💝","Eres mi persona especial 💓",
+"Tu carita es preciosa 😘","Siempre pienso en ti 💭","Tu energía es única ⚡",
+"Me haces sentir feliz 🥰","Contigo todo es mejor 💗"
 ];
 
 heart.addEventListener("click", () => {
-
-  for(let i=0;i<3;i++){ // 8 frases por clic
-
-    const text =
-      phrases[Math.floor(Math.random()*phrases.length)];
-
+  for(let i=0;i<3;i++){
+    const text = phrases[Math.floor(Math.random()*phrases.length)];
     const el = document.createElement("div");
     el.className="phrase";
     el.innerText=text;
-
-    // posición inicial (desde el corazón)
     const rect = heart.getBoundingClientRect();
     el.style.left = (rect.left + rect.width/2 -100) + "px";
-    el.style.top  = (rect.top - 80) + "px";
-
-    // dirección aleatoria izquierda/derecha
+    el.style.top = (rect.top - 80) + "px";
     const side = Math.random()<0.5?-1:1;
-
     const x = (80 + Math.random()*200)*side;
     const y = 300 + Math.random()*200;
-
     const r = (Math.random()*60-30)+"deg";
-
     el.style.setProperty("--x", x+"px");
     el.style.setProperty("--y", y+"px");
     el.style.setProperty("--r", r);
-
     document.body.appendChild(el);
-
     setTimeout(()=>el.remove(),5000);
   }
-
 });
+</script>
+
+</body>
+</html>
